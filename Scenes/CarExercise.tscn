@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq2a8l5k1lm68"]
+
+[ext_resource type="FontFile" uid="uid://i3dyhc6v3p23" path="res://Fonts/Open_Sans/static/OpenSans-Regular.ttf" id="1_y0mfk"]
+
+[node name="CarExercise" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -15.0
+offset_top = -31.0
+offset_right = 669.0
+offset_bottom = 1208.0
+color = Color(0.854902, 0.854902, 0.784314, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 89.0
+offset_top = 97.0
+offset_right = 574.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("1_y0mfk")
+theme_override_font_sizes/font_size = 32
+text = "Bilen i korsningen avser att svänga till höger. Välj vägen till höger."
+autowrap_mode = 3
