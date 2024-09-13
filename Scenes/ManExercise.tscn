@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://xtqsvuoo1ie0"]
+[gd_scene load_steps=8 format=3 uid="uid://xtqsvuoo1ie0"]
+
+[ext_resource type="Texture2D" uid="uid://gg5jedlgbx0q" path="res://Assets/ManExerciseAssets/Adamsgräsframe.png" id="1_vc5jq"]
+[ext_resource type="Texture2D" uid="uid://btj00508sigei" path="res://Assets/ManExerciseAssets/Adamsgräsframe2.png" id="2_36d1l"]
+[ext_resource type="Texture2D" uid="uid://da3dv46p7h0pm" path="res://Assets/ManExerciseAssets/Adamsgräsframe3.png" id="3_lt561"]
+[ext_resource type="Texture2D" uid="uid://bn4w1chabjscv" path="res://Assets/ManExerciseAssets/Frame1Grass.png" id="4_kgw54"]
 
 [sub_resource type="Animation" id="Animation_r6awa"]
 resource_name = "SwayingGrass"
+length = 0.5
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -9,14 +16,30 @@ tracks/0/path = NodePath("../Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.166667, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": []
+"values": [ExtResource("1_vc5jq"), ExtResource("2_36d1l"), ExtResource("3_lt561")]
+}
+
+[sub_resource type="Animation" id="Animation_gt28l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_kgw54")]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6npry"]
 _data = {
+"RESET": SubResource("Animation_gt28l"),
 "SwayingGrass": SubResource("Animation_r6awa")
 }
 
@@ -32,5 +55,8 @@ root_node = NodePath("../ColorRect")
 libraries = {
 "": SubResource("AnimationLibrary_6npry")
 }
+speed_scale = 0.75
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(180, 620)
+texture = ExtResource("4_kgw54")
