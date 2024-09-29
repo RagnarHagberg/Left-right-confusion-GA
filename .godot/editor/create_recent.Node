@@ -1,12 +1,8 @@
-Label
-Timer
-Marker2D
+CollisionShape2D
 Node
 Node2D
-Button
-PanelContainer
 Sprite2D
+Area2D
+AnimatedSprite2D
 AnimationPlayer
 ColorRect
-CollisionShape2D
-Area2D

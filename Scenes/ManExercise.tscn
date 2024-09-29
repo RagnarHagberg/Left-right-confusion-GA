@@ -1,62 +1,101 @@
-[gd_scene load_steps=8 format=3 uid="uid://xtqsvuoo1ie0"]
+[gd_scene load_steps=13 format=3 uid="uid://xtqsvuoo1ie0"]
 
-[ext_resource type="Texture2D" uid="uid://gg5jedlgbx0q" path="res://Assets/ManExerciseAssets/Adamsgräsframe.png" id="1_vc5jq"]
-[ext_resource type="Texture2D" uid="uid://btj00508sigei" path="res://Assets/ManExerciseAssets/Adamsgräsframe2.png" id="2_36d1l"]
-[ext_resource type="Texture2D" uid="uid://da3dv46p7h0pm" path="res://Assets/ManExerciseAssets/Adamsgräsframe3.png" id="3_lt561"]
-[ext_resource type="Texture2D" uid="uid://bn4w1chabjscv" path="res://Assets/ManExerciseAssets/Frame1Grass.png" id="4_kgw54"]
+[ext_resource type="Script" path="res://Scenes/man_exercise.gd" id="1_0u4vf"]
+[ext_resource type="Texture2D" uid="uid://bm6ioh77fkwif" path="res://Assets/ManExerciseAssets/Adam_grass_drawing3.svg" id="1_4wsew"]
+[ext_resource type="Texture2D" uid="uid://d2j3y44akp5us" path="res://Assets/ManExerciseAssets/Man.png" id="3_43jep"]
+[ext_resource type="Texture2D" uid="uid://upp5nytfm1g7" path="res://Assets/ManExerciseAssets/Box.png" id="4_i5v3g"]
 
-[sub_resource type="Animation" id="Animation_gt28l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("4_kgw54")]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qwim"]
+atlas = ExtResource("1_4wsew")
+region = Rect2(0, 223, 264, 450)
 
-[sub_resource type="Animation" id="Animation_r6awa"]
-resource_name = "SwayingGrass"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Sprite2D:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.333333),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [ExtResource("1_vc5jq"), ExtResource("2_36d1l"), ExtResource("3_lt561")]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_dq13t"]
+atlas = ExtResource("1_4wsew")
+region = Rect2(0, 673, 264, 450)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6npry"]
-_data = {
-"RESET": SubResource("Animation_gt28l"),
-"SwayingGrass": SubResource("Animation_r6awa")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_kh6sb"]
+atlas = ExtResource("1_4wsew")
+region = Rect2(264, 223, 264, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uke4g"]
+atlas = ExtResource("1_4wsew")
+region = Rect2(264, 673, 264, 450)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an1xg"]
+atlas = ExtResource("1_4wsew")
+region = Rect2(528, 223, 264, 450)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_086sb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qwim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dq13t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kh6sb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uke4g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an1xg")
+}],
+"loop": true,
+"name": &"SwayingGrass",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7w1w"]
+size = Vector2(670, 1370)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74yai"]
 
 [node name="ManExercise" type="Node2D"]
+script = ExtResource("1_0u4vf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 modulate = Color(0.61339, 0.61339, 0.61339, 1)
 offset_right = 648.0
 offset_bottom = 1152.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../ColorRect")
-libraries = {
-"": SubResource("AnimationLibrary_6npry")
-}
-speed_scale = 0.75
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_086sb")
+animation = &"SwayingGrass"
+frame = 4
+frame_progress = 0.212616
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(180, 620)
-texture = ExtResource("4_kgw54")
+[node name="Man" type="Sprite2D" parent="."]
+position = Vector2(324, 576)
+scale = Vector2(0.644444, 0.644444)
+texture = ExtResource("3_43jep")
+
+[node name="RightArea" type="Area2D" parent="Man"]
+scale = Vector2(1.55172, 1.55172)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Man/RightArea"]
+position = Vector2(390, 0)
+shape = SubResource("RectangleShape2D_d7w1w")
+
+[node name="LeftArea" type="Area2D" parent="Man"]
+scale = Vector2(1.55172, 1.55172)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Man/LeftArea"]
+position = Vector2(-390, 0)
+shape = SubResource("RectangleShape2D_d7w1w")
+
+[node name="Box" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Box"]
+scale = Vector2(0.226563, 0.226563)
+texture = ExtResource("4_i5v3g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+shape = SubResource("RectangleShape2D_74yai")

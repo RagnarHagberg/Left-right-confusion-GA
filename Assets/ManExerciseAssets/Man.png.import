@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btj00508sigei"
-path="res://.godot/imported/Adamsgräsframe2.png-cd544565853374de01951084e43fafc5.ctex"
+uid="uid://d2j3y44akp5us"
+path="res://.godot/imported/Man.png-0c80a64ab3cb0553a93112fddec4ee79.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ManExerciseAssets/Adamsgräsframe2.png"
-dest_files=["res://.godot/imported/Adamsgräsframe2.png-cd544565853374de01951084e43fafc5.ctex"]
+source_file="res://Assets/ManExerciseAssets/Man.png"
+dest_files=["res://.godot/imported/Man.png-0c80a64ab3cb0553a93112fddec4ee79.ctex"]
 
 [params]
 

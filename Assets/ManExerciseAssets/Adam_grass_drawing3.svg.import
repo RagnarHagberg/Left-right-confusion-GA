@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0qc0qymp8431"
-path="res://.godot/imported/Frame2Grass.png-7b8229953c41ee9ba6c2caebe1fc8d68.ctex"
+uid="uid://bm6ioh77fkwif"
+path="res://.godot/imported/Adam_grass_drawing3.svg-5aca89845a561734f574d8fdfe9b03bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ManExerciseAssets/Frame2Grass.png"
-dest_files=["res://.godot/imported/Frame2Grass.png-7b8229953c41ee9ba6c2caebe1fc8d68.ctex"]
+source_file="res://Assets/ManExerciseAssets/Adam_grass_drawing3.svg"
+dest_files=["res://.godot/imported/Adam_grass_drawing3.svg-5aca89845a561734f574d8fdfe9b03bc.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
