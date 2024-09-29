@@ -1,1 +1,5 @@
+res://Scenes/Game.tscn
+res://Scripts/CarPositionGenerator.gd
+res://Scenes/CarExercise.tscn
 res://Scenes/ManExercise.tscn
+res://Scripts/car_exercise.gd
