@@ -23,7 +23,12 @@ window/size/viewport_height=1152
 [file_customization]
 
 folder_colors={
+"res://Assets/": "red",
+"res://Assets/CarExercise/": "blue",
 "res://Assets/ManExerciseAssets/": "green",
+"res://Fonts/": "yellow",
+"res://Scenes/": "gray",
+"res://Scripts/": "purple",
 "res://Scripts/ManExercise/": "green"
 }
 
