@@ -1,55 +1,43 @@
-[gd_scene load_steps=13 format=3 uid="uid://xtqsvuoo1ie0"]
+[gd_scene load_steps=12 format=3 uid="uid://xtqsvuoo1ie0"]
 
 [ext_resource type="Script" path="res://Scripts/ManExercise/man_exercise.gd" id="1_0u4vf"]
-[ext_resource type="Texture2D" uid="uid://bm6ioh77fkwif" path="res://Assets/ManExerciseAssets/Adam_grass_drawing3.svg" id="1_4wsew"]
+[ext_resource type="Texture2D" uid="uid://tmpfemjss4gk" path="res://Assets/ManExerciseAssets/SwayingGrassFrame0.png" id="2_704qq"]
 [ext_resource type="Texture2D" uid="uid://d2j3y44akp5us" path="res://Assets/ManExerciseAssets/Man.png" id="3_43jep"]
+[ext_resource type="Texture2D" uid="uid://bh2kavxn1x4mj" path="res://Assets/ManExerciseAssets/SwayingGrassFrame1.png" id="3_a0bub"]
+[ext_resource type="Texture2D" uid="uid://dt8s1i10qkrel" path="res://Assets/ManExerciseAssets/SwayingGrassFrame2.png" id="4_ckyex"]
 [ext_resource type="Texture2D" uid="uid://upp5nytfm1g7" path="res://Assets/ManExerciseAssets/Box.png" id="4_i5v3g"]
+[ext_resource type="Texture2D" uid="uid://y5f6qaan6ry6" path="res://Assets/ManExerciseAssets/SwayingGrassFrame3.png" id="5_i32fn"]
+[ext_resource type="Texture2D" uid="uid://dnutebtt2vijo" path="res://Assets/ManExerciseAssets/SwayingGrassFrame4.png" id="6_xh7ff"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7qwim"]
-atlas = ExtResource("1_4wsew")
-region = Rect2(0, 223, 264, 450)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dq13t"]
-atlas = ExtResource("1_4wsew")
-region = Rect2(0, 673, 264, 450)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kh6sb"]
-atlas = ExtResource("1_4wsew")
-region = Rect2(264, 223, 264, 450)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uke4g"]
-atlas = ExtResource("1_4wsew")
-region = Rect2(264, 673, 264, 450)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_an1xg"]
-atlas = ExtResource("1_4wsew")
-region = Rect2(528, 223, 264, 450)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_086sb"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ymhwd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7qwim")
+"texture": ExtResource("2_704qq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dq13t")
+"texture": ExtResource("3_a0bub")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_kh6sb")
+"texture": ExtResource("4_ckyex")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uke4g")
+"texture": ExtResource("5_i32fn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_an1xg")
+"texture": ExtResource("6_xh7ff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i32fn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ckyex")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a0bub")
 }],
 "loop": true,
-"name": &"SwayingGrass",
-"speed": 5.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"default",
+"name": &"SwayingGrassAnimation",
 "speed": 5.0
 }]
 
@@ -66,11 +54,109 @@ modulate = Color(0.61339, 0.61339, 0.61339, 1)
 offset_right = 648.0
 offset_bottom = 1152.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_086sb")
-animation = &"SwayingGrass"
-frame = 4
-frame_progress = 0.212616
+[node name="GrassAnimations" type="Node2D" parent="."]
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(253.75, 261.25)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(354, 471)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+frame_progress = 0.957121
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(403.75, 361.25)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(55, 732)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="GrassAnimations"]
+visible = false
+position = Vector2(182.75, 333.25)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(282.75, 833.25)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+frame_progress = 0.957121
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(482.75, 533.25)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(106, 102)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(187.75, 557.25)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D10" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(287.75, 1057.25)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+frame_progress = 0.957121
+
+[node name="AnimatedSprite2D11" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(487.75, 757.25)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D12" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(530, 925)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D13" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(70, 950)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
+
+[node name="AnimatedSprite2D14" type="AnimatedSprite2D" parent="GrassAnimations"]
+position = Vector2(454, 225)
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_ymhwd")
+animation = &"SwayingGrassAnimation"
+autoplay = "SwayingGrassAnimation"
 
 [node name="Man" type="Sprite2D" parent="."]
 position = Vector2(324, 576)
@@ -78,6 +164,7 @@ scale = Vector2(0.644444, 0.644444)
 texture = ExtResource("3_43jep")
 
 [node name="RightArea" type="Area2D" parent="Man"]
+visible = false
 scale = Vector2(1.55172, 1.55172)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Man/RightArea"]
@@ -85,17 +172,19 @@ position = Vector2(390, 0)
 shape = SubResource("RectangleShape2D_d7w1w")
 
 [node name="LeftArea" type="Area2D" parent="Man"]
+visible = false
 scale = Vector2(1.55172, 1.55172)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Man/LeftArea"]
 position = Vector2(-390, 0)
 shape = SubResource("RectangleShape2D_d7w1w")
 
-[node name="Box" type="Area2D" parent="."]
+[node name="Box" type="Area2D" parent="Man"]
+scale = Vector2(1.55173, 1.55173)
 
-[node name="Sprite2D" type="Sprite2D" parent="Box"]
+[node name="Sprite2D" type="Sprite2D" parent="Man/Box"]
 scale = Vector2(0.226563, 0.226563)
 texture = ExtResource("4_i5v3g")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Box"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Man/Box"]
 shape = SubResource("RectangleShape2D_74yai")
