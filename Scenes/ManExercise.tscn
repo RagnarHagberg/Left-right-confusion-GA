@@ -50,9 +50,9 @@ size = Vector2(670, 1370)
 script = ExtResource("1_0u4vf")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-modulate = Color(0.61339, 0.61339, 0.61339, 1)
 offset_right = 648.0
 offset_bottom = 1152.0
+color = Color(0.611765, 0.611765, 0.611765, 1)
 
 [node name="GrassAnimations" type="Node2D" parent="."]
 
