@@ -188,3 +188,7 @@ texture = ExtResource("4_i5v3g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Man/Box"]
 shape = SubResource("RectangleShape2D_74yai")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
