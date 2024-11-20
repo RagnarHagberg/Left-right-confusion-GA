@@ -12,7 +12,7 @@ var goal : int
 var relative_goal : int
 
 var prev_start_direction = -1
-
+var start_direction : int
 
 # Called when the node enters the scene tree for the first time.
 
@@ -22,10 +22,13 @@ func get_goal() -> int:
 func get_relative_goal() -> int:
 	return relative_goal
 
+func get_start_direction() -> int:
+	return start_direction
+
 func organize_car() -> void:
 	# Origin
 	var car = get_tree().get_nodes_in_group("Car")[0]
-	var start_direction = randi() % 4
+	start_direction = randi() % 4
 	while start_direction == prev_start_direction:
 		start_direction = randi() % 4
 	prev_start_direction = start_direction

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cq2a8l5k1lm68"]
+[gd_scene load_steps=9 format=3 uid="uid://cq2a8l5k1lm68"]
 
 [ext_resource type="Script" path="res://Scripts/car_exercise.gd" id="1_1b3yy"]
 [ext_resource type="FontFile" uid="uid://2lywd041g6v6" path="res://Fonts/Open_Sans/static/OpenSans-Bold.ttf" id="1_g3v40"]
@@ -12,6 +12,11 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w2msn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1xxo8"]
+bg_color = Color(0.891442, 0.896295, 0.939823, 1)
 
 [node name="CarExercise" type="Node2D"]
 script = ExtResource("1_1b3yy")
@@ -39,7 +44,7 @@ offset_top = 35.0
 offset_right = 104.0
 offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Score: 1"
+text = "Score: 0"
 
 [node name="IntersectionWithoutCars2" type="Sprite2D" parent="."]
 position = Vector2(338, 742)
@@ -98,16 +103,85 @@ text = "4"
 script = ExtResource("5_jrlqx")
 
 [node name="1Position" type="Marker2D" parent="RandomGenerator"]
-position = Vector2(193, 767)
+position = Vector2(190, 746)
 
 [node name="2Position" type="Marker2D" parent="RandomGenerator"]
-position = Vector2(311, 610)
+position = Vector2(333, 610)
 
 [node name="3Position" type="Marker2D" parent="RandomGenerator"]
-position = Vector2(470, 760)
+position = Vector2(468, 740)
 
 [node name="4Position" type="Marker2D" parent="RandomGenerator"]
-position = Vector2(377, 877)
+position = Vector2(356, 876)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+custom_minimum_size = Vector2(500, 1000)
+offset_left = 71.0
+offset_top = 69.0
+offset_right = 571.0
+offset_bottom = 1069.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_w2msn")
+
+[node name="InstructionLabel2" type="Label" parent="CanvasLayer/Panel"]
+offset_left = 2.0
+offset_top = 28.0
+offset_right = 487.0
+offset_bottom = 305.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_g3v40")
+theme_override_font_sizes/font_size = 48
+text = "Test avklarat!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_top = 285.0
+offset_right = 500.0
+offset_bottom = 443.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+
+[node name="CorrectAnswers" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Panel"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 49.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 24
+text = "Antal rätt: "
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1xxo8")
+
+[node name="TimePerQuestion" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Panel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 11.0
+offset_right = 155.0
+offset_bottom = 45.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Tid per fråga:"
+
+[node name="Panel3" type="Panel" parent="CanvasLayer/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(500, 50)
+layout_mode = 2
+
+[node name="MostOftenWrong" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Panel3"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 49.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 24
+text = "Oftast fel från:"
 
 [connection signal="pressed" from="ButtonContainer/1" to="." method="_on_1_pressed"]
 [connection signal="pressed" from="ButtonContainer/2" to="." method="_on_2_pressed"]
