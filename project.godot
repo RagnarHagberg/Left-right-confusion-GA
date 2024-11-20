@@ -19,6 +19,7 @@ config/icon="res://Assets/icon.svg"
 
 window/size/viewport_width=648
 window/size/viewport_height=1152
+window/stretch/mode="canvas_items"
 
 [file_customization]
 
