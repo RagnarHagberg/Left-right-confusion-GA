@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="left-right-confusion"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://Scenes/StartScreen.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://Assets/icon.svg"
 
