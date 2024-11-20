@@ -177,4 +177,4 @@ func _on_4_pressed() -> void:
 
 
 func _on_restart_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/ManExercise.tscn")
+	get_tree().change_scene_to_file("res://Scenes/StartScreen.tscn")
