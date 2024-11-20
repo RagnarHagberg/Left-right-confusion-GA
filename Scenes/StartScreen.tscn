@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://beqg5scmovkv7"]
+[gd_scene load_steps=10 format=3 uid="uid://beqg5scmovkv7"]
 
 [ext_resource type="Script" path="res://Scripts/StartScreen.gd" id="1_dm76e"]
-[ext_resource type="Texture2D" uid="uid://hhnyp8u702lu" path="res://Assets/icon.svg" id="1_evxwi"]
+[ext_resource type="FontFile" uid="uid://b71k6vlwxnxb2" path="res://Fonts/Roboto/Roboto-BlackItalic.ttf" id="2_dr20u"]
+[ext_resource type="FontFile" uid="uid://dsp7c7hyoat16" path="res://Fonts/Roboto/Roboto-Medium.ttf" id="3_rqr43"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_otp48"]
 
@@ -22,6 +23,44 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 shadow_size = 4
 shadow_offset = Vector2(0, 5)
+
+[sub_resource type="Animation" id="Animation_yakxm"]
+resource_name = "countdown"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimerLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["3", "2", "1
+"]
+}
+
+[sub_resource type="Animation" id="Animation_oun0d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TimerLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["3"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sd37m"]
+_data = {
+"RESET": SubResource("Animation_oun0d"),
+"countdown": SubResource("Animation_yakxm")
+}
 
 [node name="StartScreen" type="Control"]
 layout_mode = 3
@@ -70,13 +109,42 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.611765, 0.611765, 0.611765, 1)
 
-[node name="Godotgoat" type="TextureRect" parent="."]
-modulate = Color(1, 1, 0.219608, 1)
-layout_mode = 0
-offset_left = 253.0
-offset_top = 200.0
-offset_right = 381.0
-offset_bottom = 328.0
-texture = ExtResource("1_evxwi")
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -132.0
+offset_top = 300.0
+offset_right = 132.0
+offset_bottom = 323.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_dr20u")
+theme_override_font_sizes/font_size = 35
+text = "Adam och Ragnars gymnasiarbete"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_sd37m")
+}
+
+[node name="TimerLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -71.0
+offset_top = -702.0
+offset_right = 71.0
+offset_bottom = -408.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_rqr43")
+theme_override_font_sizes/font_size = 250
+text = "3"
 
 [connection signal="pressed" from="Pratice" to="." method="_on_pratice_pressed"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

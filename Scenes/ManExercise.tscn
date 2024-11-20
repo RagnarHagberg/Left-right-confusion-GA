@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://xtqsvuoo1ie0"]
+[gd_scene load_steps=14 format=3 uid="uid://xtqsvuoo1ie0"]
 
 [ext_resource type="Script" path="res://Scripts/ManExercise/man_exercise.gd" id="1_0u4vf"]
 [ext_resource type="Texture2D" uid="uid://tmpfemjss4gk" path="res://Assets/ManExerciseAssets/SwayingGrassFrame0.png" id="2_704qq"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://upp5nytfm1g7" path="res://Assets/ManExerciseAssets/Box.png" id="4_i5v3g"]
 [ext_resource type="Texture2D" uid="uid://y5f6qaan6ry6" path="res://Assets/ManExerciseAssets/SwayingGrassFrame3.png" id="5_i32fn"]
 [ext_resource type="Texture2D" uid="uid://dnutebtt2vijo" path="res://Assets/ManExerciseAssets/SwayingGrassFrame4.png" id="6_xh7ff"]
+[ext_resource type="FontFile" uid="uid://daj8t1whra2dx" path="res://Fonts/Roboto/Roboto-Bold.ttf" id="9_am5j8"]
+[ext_resource type="Texture2D" uid="uid://binbeynrlnb2h" path="res://Assets/ManExerciseAssets/arrow.png" id="10_1fql1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ymhwd"]
 animations = [{
@@ -49,7 +51,7 @@ size = Vector2(670, 1370)
 [node name="ManExercise" type="Node2D"]
 script = ExtResource("1_0u4vf")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 offset_right = 648.0
 offset_bottom = 1152.0
 color = Color(0.611765, 0.611765, 0.611765, 1)
@@ -189,6 +191,35 @@ texture = ExtResource("4_i5v3g")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Man/Box"]
 shape = SubResource("RectangleShape2D_74yai")
 
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="FeedbackLabel" type="Label" parent="."]
+offset_left = 192.0
+offset_top = 36.0
+offset_right = 442.0
+offset_bottom = 202.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_am5j8")
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+
+[node name="LeftButton" type="TextureButton" parent="."]
+modulate = Color(0.455055, 0.274381, 0.566304, 1)
+offset_left = 125.0
+offset_top = 790.0
+offset_right = 625.0
+offset_bottom = 1290.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("10_1fql1")
+
+[node name="Rightbutton" type="TextureButton" parent="."]
+modulate = Color(0.366595, 0.366595, 0.366595, 1)
+offset_left = 511.0
+offset_top = 941.0
+offset_right = 1011.0
+offset_bottom = 1441.0
+rotation = 3.14159
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("10_1fql1")
+
+[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="Rightbutton" to="." method="_on_rightbutton_pressed"]
