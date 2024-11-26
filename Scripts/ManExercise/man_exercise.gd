@@ -17,6 +17,8 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_right"):
 			update_label("right")
 		move()
+		
+	get_node("TimerLabel").text = str(round(get_node("Timer").time_left))
 
 
 func move():
@@ -81,3 +83,15 @@ func _on_left_button_pressed() -> void:
 func _on_rightbutton_pressed() -> void:
 	update_label("right")
 	move()
+
+
+func _on_timer_timeout() -> void:
+	get_node("Panel").show()
+	get_node("Panel/VBoxContainer/Panel/CorrectAnswers").text = "Antal rätt: " + str(correct) 
+	get_node("Panel/VBoxContainer/Panel2/IncorrectAnswers").text = "Antal fel: " + str(incorrect)
+	print(correct, incorrect)
+	if correct + incorrect == 0:
+		get_node("Panel/VBoxContainer/Panel3/Acurracy").text = "Andel rätt: 0%"
+
+	else:
+		get_node("Panel/VBoxContainer/Panel3/Acurracy").text = "Andel rätt: " + str(round(float(correct)/(correct+incorrect)*100)) + "%"
