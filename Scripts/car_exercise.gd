@@ -5,7 +5,7 @@ var score = 0 : set = _set_score
 var questions_answered = 0
 var time_since_last_input = 0
 var answers = {} #  {"time" : time_since_last_input, "start_direction" : randomizer.get_start_direction(), "correct" : correct , "goal_direction" : direction_text}
-var question_amount = 10
+var question_amount = 50
 
 func _process(delta: float) -> void:
 	time_since_last_input += delta
@@ -174,3 +174,7 @@ func _on_4_pressed() -> void:
 		continue_car_exercise(true)
 	else:
 		continue_car_exercise(false)
+
+
+func _on_restart_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/ManExercise.tscn")

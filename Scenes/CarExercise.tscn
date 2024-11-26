@@ -124,6 +124,14 @@ offset_right = 571.0
 offset_bottom = 1069.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_w2msn")
 
+[node name="Restart" type="Button" parent="CanvasLayer/Panel"]
+custom_minimum_size = Vector2(300, 100)
+offset_left = 91.0
+offset_top = 716.0
+offset_right = 391.0
+offset_bottom = 816.0
+text = "Restart"
+
 [node name="InstructionLabel2" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
 offset_left = 2.0
@@ -188,3 +196,4 @@ text = "Oftast fel från:"
 [connection signal="pressed" from="ButtonContainer/2" to="." method="_on_2_pressed"]
 [connection signal="pressed" from="ButtonContainer/3" to="." method="_on_3_pressed"]
 [connection signal="pressed" from="ButtonContainer/4" to="." method="_on_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Panel/Restart" to="." method="_on_restart_pressed"]
