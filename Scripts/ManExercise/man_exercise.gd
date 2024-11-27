@@ -95,3 +95,7 @@ func _on_timer_timeout() -> void:
 
 	else:
 		get_node("Panel/VBoxContainer/Panel3/Acurracy").text = "Andel rätt: " + str(round(float(correct)/(correct+incorrect)*100)) + "%"
+
+
+func _on_main_menu_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/StartScreen.tscn")
