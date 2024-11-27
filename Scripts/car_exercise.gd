@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 
 func _set_score(new_score) -> void:
 	score = new_score
-	get_node("ScoreLabel").text = "Score: " + str(score)
+	get_node("ScoreLabel").text = "Antal rätt: " + str(score)
 
 @onready
 var randomizer : CarPositionGenerator = get_node("RandomGenerator") 
