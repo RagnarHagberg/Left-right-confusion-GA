@@ -56,8 +56,6 @@ tracks/0/keys = {
 "]
 }
 
-<<<<<<< HEAD
-=======
 [sub_resource type="Animation" id="Animation_8kl7q"]
 resource_name = "test_countdown"
 length = 3.0
@@ -75,7 +73,6 @@ tracks/0/keys = {
 "]
 }
 
->>>>>>> 861ec8a7a951869d0e476a7ff7416cd6a73d08ca
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sd37m"]
 _data = {
 "RESET": SubResource("Animation_oun0d"),

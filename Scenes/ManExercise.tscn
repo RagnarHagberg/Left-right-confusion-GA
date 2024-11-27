@@ -328,6 +328,7 @@ text = "Andel rätt:"
 
 [node name="Pratice" type="Button" parent="Panel"]
 top_level = true
+layout_mode = 0
 offset_left = 174.0
 offset_top = 700.0
 offset_right = 474.0
