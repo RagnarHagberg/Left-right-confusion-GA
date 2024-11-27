@@ -29,9 +29,9 @@ offset_bottom = 1208.0
 
 [node name="InstructionLabel" type="Label" parent="."]
 offset_left = 89.0
-offset_top = 97.0
+offset_top = 230.0
 offset_right = 574.0
-offset_bottom = 120.0
+offset_bottom = 507.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_g3v40")
 theme_override_font_sizes/font_size = 48
@@ -44,7 +44,7 @@ offset_top = 35.0
 offset_right = 104.0
 offset_bottom = 58.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Score: 0"
+text = "Antal rätt: 0"
 
 [node name="IntersectionWithoutCars2" type="Sprite2D" parent="."]
 position = Vector2(338, 742)
@@ -117,6 +117,7 @@ position = Vector2(356, 876)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
+visible = false
 custom_minimum_size = Vector2(500, 1000)
 offset_left = 71.0
 offset_top = 69.0
@@ -131,7 +132,8 @@ offset_left = 91.0
 offset_top = 716.0
 offset_right = 391.0
 offset_bottom = 816.0
-text = "Restart"
+theme_override_font_sizes/font_size = 48
+text = "Återvänd"
 
 [node name="InstructionLabel2" type="Label" parent="CanvasLayer/Panel"]
 layout_mode = 0
