@@ -126,6 +126,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_w2msn")
 
 [node name="Restart" type="Button" parent="CanvasLayer/Panel"]
 custom_minimum_size = Vector2(300, 100)
+layout_mode = 0
 offset_left = 91.0
 offset_top = 716.0
 offset_right = 391.0
