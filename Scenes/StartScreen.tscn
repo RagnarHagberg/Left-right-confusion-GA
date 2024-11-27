@@ -101,7 +101,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_otp48")
 theme_override_styles/hover = SubResource("StyleBoxFlat_d1kwh")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_b31f1")
 theme_override_styles/normal = SubResource("StyleBoxFlat_d1kwh")
-text = "Practice"
+text = "Öva"
 
 [node name="Test" type="Button" parent="."]
 top_level = true
