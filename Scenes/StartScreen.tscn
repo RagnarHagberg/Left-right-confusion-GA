@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://dj78ojr4ak8o5"]
 
-[ext_resource type="Script" path="res://Scripts/StartScreen.gd" id="1_dm76e"]
+[ext_resource type="Script" uid="uid://bdqgos6cemgs3" path="res://Scripts/StartScreen.gd" id="1_dm76e"]
 [ext_resource type="FontFile" uid="uid://b71k6vlwxnxb2" path="res://Fonts/Roboto/Roboto-BlackItalic.ttf" id="2_dr20u"]
 [ext_resource type="FontFile" uid="uid://dsp7c7hyoat16" path="res://Fonts/Roboto/Roboto-Medium.ttf" id="3_rqr43"]
 
@@ -75,9 +75,9 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sd37m"]
 _data = {
-"RESET": SubResource("Animation_oun0d"),
-"countdown": SubResource("Animation_yakxm"),
-"test_countdown": SubResource("Animation_8kl7q")
+&"RESET": SubResource("Animation_oun0d"),
+&"countdown": SubResource("Animation_yakxm"),
+&"test_countdown": SubResource("Animation_8kl7q")
 }
 
 [node name="StartScreen" type="Control"]

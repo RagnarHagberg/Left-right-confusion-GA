@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://cq2a8l5k1lm68"]
 
-[ext_resource type="Script" path="res://Scripts/car_exercise.gd" id="1_1b3yy"]
+[ext_resource type="Script" uid="uid://cs0n4tfbuc3vl" path="res://Scripts/car_exercise.gd" id="1_1b3yy"]
 [ext_resource type="FontFile" uid="uid://2lywd041g6v6" path="res://Fonts/Open_Sans/static/OpenSans-Bold.ttf" id="1_g3v40"]
 [ext_resource type="Texture2D" uid="uid://ud5e1fjpes10" path="res://Assets/CarExercise/IntersectionWithoutCars.png" id="2_2w3c8"]
 [ext_resource type="Texture2D" uid="uid://cyfgu84ert0g1" path="res://Assets/CarExercise/RightDownCar.png" id="4_espns"]
-[ext_resource type="Script" path="res://Scripts/CarPositionGenerator.gd" id="5_jrlqx"]
+[ext_resource type="Script" uid="uid://dkhkgq7yn3bo4" path="res://Scripts/CarPositionGenerator.gd" id="5_jrlqx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6n12"]
 bg_color = Color(0.333333, 0.372549, 1, 1)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=3 uid="uid://xtqsvuoo1ie0"]
 
-[ext_resource type="Script" path="res://Scripts/ManExercise/man_exercise.gd" id="1_0u4vf"]
+[ext_resource type="Script" uid="uid://c2r07l0dc3y6k" path="res://Scripts/ManExercise/man_exercise.gd" id="1_0u4vf"]
 [ext_resource type="Texture2D" uid="uid://tmpfemjss4gk" path="res://Assets/ManExerciseAssets/SwayingGrassFrame0.png" id="2_704qq"]
 [ext_resource type="Texture2D" uid="uid://d2j3y44akp5us" path="res://Assets/ManExerciseAssets/Man.png" id="3_43jep"]
 [ext_resource type="Texture2D" uid="uid://bh2kavxn1x4mj" path="res://Assets/ManExerciseAssets/SwayingGrassFrame1.png" id="3_a0bub"]
@@ -197,7 +197,7 @@ autoplay = "SwayingGrassAnimation"
 
 [node name="Man" type="Sprite2D" parent="."]
 position = Vector2(324, 576)
-scale = Vector2(0.644444, 0.644444)
+scale = Vector2(7, 7)
 texture = ExtResource("3_43jep")
 
 [node name="RightArea" type="Area2D" parent="Man"]
@@ -217,6 +217,7 @@ position = Vector2(-390, 0)
 shape = SubResource("RectangleShape2D_d7w1w")
 
 [node name="Box" type="Area2D" parent="Man"]
+position = Vector2(17.1111, -31.8889)
 scale = Vector2(1.55173, 1.55173)
 
 [node name="Sprite2D" type="Sprite2D" parent="Man/Box"]

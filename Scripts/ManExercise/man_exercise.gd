@@ -26,7 +26,7 @@ func move():
 	box.rotation = -man.rotation
 	
 	var box_angle = randf_range(0,2*PI)
-	var box_distance = randf_range(300,500)
+	var box_distance = randf_range(30,100)
 	
 	# Corrects box position if its indecipherable whether the box is to the left or right. 
 	var adjusting_angle = 30*2*PI/360
